@@ -1,7 +1,9 @@
-import React from 'react'
+'use client'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 const ToastProvider = () => {
-  return <div>ToastProvider</div>
+  return <ToastContainer autoClose={2000} />
 }
 
 export default ToastProvider

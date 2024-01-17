@@ -13,6 +13,13 @@ import AutoSignInCheckbox from '@/components/autoSignInCheckbox/AutoSignInCheckb
 import Devider from '@/components/devider/Devider'
 import Button from '@/components/button/Button'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
+import {
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from 'firebase/auth'
+import { auth } from '@/firebase/firebase'
 
 const LoginClient = () => {
   const [email, setEmail] = useState('')
@@ -29,10 +36,30 @@ const LoginClient = () => {
   const loginUser = (e) => {
     e.preventDefault()
     setIsLoading(true)
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        setIsLoading(false)
+        toast.success(`로그인 성공!`)
+        redirectUser()
+      })
+      .catch((e) => {
+        setIsLoading(false)
+        toast.error(e.message)
+      })
   }
 
   const signInWithGoogle = () => {
-    //
+    const provider = new GoogleAuthProvider()
+
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        toast.success(`로그인 성공!`)
+        redirectUser()
+      })
+      .catch((e) => {
+        toast.error(e.message)
+      })
   }
 
   return (

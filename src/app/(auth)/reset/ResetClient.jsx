@@ -9,14 +9,31 @@ import React, { useState } from 'react'
 import styles from './Reset.module.scss'
 
 import ArrowLogoPath from '@/assets/arrow.svg'
+import { sendPasswordResetEmail } from 'firebase/auth'
+import { toast } from 'react-toastify'
+import { auth } from '@/firebase/firebase'
+import { useRouter } from 'next/navigation'
 
 const ResetClient = () => {
+  const router = useRouter()
+
   const [email, setEmail] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
   const resetPassword = (e) => {
     e.preventDefault()
     setIsLoading(true)
+
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        setIsLoading(false)
+        toast.success(`이메일을 확인해 주세요.`)
+        router.push('/login')
+      })
+      .catch((e) => {
+        setIsLoading(false)
+        toast.error(e.message)
+      })
   }
 
   return (
