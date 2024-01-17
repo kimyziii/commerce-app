@@ -1,7 +1,12 @@
 import React from 'react'
+import AddProductClient from './AddProductClient'
 
 const AddProduct = () => {
-  return <div>AddProduct</div>
+  return (
+    <>
+      <AddProductClient />
+    </>
+  )
 }
 
 export default AddProduct

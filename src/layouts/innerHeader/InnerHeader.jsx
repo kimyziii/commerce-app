@@ -32,6 +32,7 @@ const InnerHeader = () => {
       <button type='button' className={styles.buttonCategory}>
         카테고리
       </button>
+
       {/* <!-- 검색 폼  --> */}
       <form action='/' className={styles.searchForm}>
         <fieldset>

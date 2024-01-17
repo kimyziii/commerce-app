@@ -1,3 +1,12 @@
+'use client'
+import Product from '@/components/product/Product'
+import Slider from '@/components/slider/Slider'
+
 export default function Home() {
-  return <main>Home</main>
+  return (
+    <>
+      <Slider />
+      <Product />
+    </>
+  )
 }
