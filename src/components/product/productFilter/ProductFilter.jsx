@@ -13,7 +13,7 @@ import styles from './ProductFilter.module.scss'
 const ProductFilter = () => {
   const [category, setCategory] = useState('All')
   const [brand, setBrand] = useState('All')
-  const [price, setPrice] = useState(10000)
+  const [price, setPrice] = useState(100000)
 
   const products = useSelector(selectProducts)
   const minPrice = useSelector(selectMinPrice)
