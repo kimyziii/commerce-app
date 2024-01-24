@@ -14,7 +14,7 @@ const useFetchDocuments = (collectionName, arg) => {
     let documentsArray = []
 
     querySnapshot.forEach((doc) => {
-      documentsArray.push(doc.data())
+      documentsArray.push({ id: doc.id, ...doc.data() })
     })
 
     setDocuments(documentsArray)
