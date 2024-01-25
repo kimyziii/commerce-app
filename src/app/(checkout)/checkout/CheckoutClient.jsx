@@ -11,7 +11,6 @@ import {
   selectCartItems,
   selectCartTotalAmount,
 } from '@/redux/slice/cartSlice'
-import { formatTime } from '@/utils/dayjs'
 import { toast } from 'react-toastify'
 import { selectEmail, selectUserId } from '@/redux/slice/authSlice'
 import { selectShippingAddress } from '@/redux/slice/checkoutSlice'

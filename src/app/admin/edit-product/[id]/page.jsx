@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
+import EditProductClient from './EditProductClient'
 
 const EditProduct = () => {
-  return <div>EditProduct</div>
+  return <EditProductClient />
 }
 
 export default EditProduct

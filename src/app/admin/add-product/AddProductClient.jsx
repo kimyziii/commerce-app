@@ -10,7 +10,7 @@ import { db, storage } from '@/firebase/firebase'
 import { toast } from 'react-toastify'
 import { Timestamp, addDoc, collection } from 'firebase/firestore'
 
-const categories = [
+export const categories = [
   { id: 1, name: 'Laptop' },
   { id: 2, name: 'Electronics' },
   { id: 3, name: 'Fashion' },
