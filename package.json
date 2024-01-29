@@ -27,9 +27,11 @@
     "react-simple-star-rating": "^5.1.7",
     "react-toastify": "^10.0.1",
     "redux-devtools-extension": "^2.13.9",
-    "sass": "^1.69.7"
+    "sass": "^1.69.7",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@types/react": "18.2.48",
     "eslint": "^8",
     "eslint-config-next": "14.0.4"
   }
